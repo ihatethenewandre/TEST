@@ -49,7 +49,7 @@ A la izquierda se muestra la imagen de referencia. A la derecha, el render final
 
 | Imagen Referencia | Render Final |
 | :---: | :---: |
-| <img src="Mario64.jpg" alt="Imagen Referencia" width="360"/> | <img src="Mario64.bmp" alt="Render Final" width="360"/> |
+| <img src="Mario64.jpg" alt="Imagen Referencia" width="400"/> | <img src="Mario64.bmp" alt="Render Final" width="400"/> |
 
 ---
 
