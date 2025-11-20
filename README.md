@@ -1,68 +1,111 @@
 # Proyecto II — Gráficas por Computadora
 
-**Universidad del Valle de Guatemala** **Autor:** André Pivaral  
-**Fecha:** 15 de Octubre de 2025
+**Universidad del Valle de Guatemala**
+**Autor:** André Emilio Pivaral López
 
 ---
 
 ## Descripción
 
-Este proyecto consiste en la implementación de un **Ray Tracer** completo escrito en Python. La escena renderizada recrea un nivel icónico inspirado en **Super Mario 64**.
+Este proyecto consiste en el desarrollo de un Ray Tracer escrito en Python. Renderiza una escena inspirada en la estética del icónico videojuego de Nintendo, Super Mario 64.
 
-La idea surgió al ver un video en YouTube de Super Mario 64 renderizado con tecnología moderna de Ray Tracing. Me di cuenta de que la geometría original del videojuego (basada principalmente en primitivas como esferas, cilindros y polígonos simples) es bastante accesible y se alinea perfectamente con los conocimientos adquiridos en el curso. Esto me permitió plantear el desafío de recrear esa estética nostálgica cumpliendo con todos los requisitos técnicos del proyecto. Además, al ser mi videojuego favorito, la motivación para cuidar los detalles y entregar un resultado de alta calidad fue personal.
+Esta idea surgió al ver un video del videojuego modificado para renderizar con Ray Tracing. A pesar de que la geometría original del videojuego es bastante simple, el renderizado hacía que se viera realista. Este proyecto me planteó el desafío de recrear esa estética, con los conocimientos adquiridos en el módulo del curso; cumpliendo con los requisitos de ponderación del proyecto. Además, al ser mi videojuego favorito, la motivación por cuidar los detalles y entregar una escena de calidad fue personal.
 
-El motor soporta materiales opacos, reflectivos, texturizados, manejo de luces (ambiental, direccional y puntual), sombras y carga de modelos OBJ complejos.
+El programa soporta materiales opacos, reflectivos, texturizados; manejo de luz ambiental, direccional y puntual; sombras y carga de modelos OBJ.
 
 ---
 
-## Composición de la Escena
+## Escena
 
-La escena está compuesta por los siguientes elementos geométricos y recursos:
+Esta escena está compuesta por los siguientes elementos:
 
-* **Árboles (6 unidades):**
-    * Cada árbol está compuesto por **1 Cilindro** (el tronco) y **3 Esferas** (el follaje).
-* **Bloques de Piedra (5 unidades):**
-    * Representados mediante figuras **AABB** (Axis Aligned Bounding Boxes) con texturas.
-* **Pilares de Madera (4 unidades):**
-    * Modelados utilizando **Cilindros** con texturas.
+* **6 Árboles:**
+    * En donde cada árbol está compuesto por el tronco (1 cilindro) y las hojas (3 esferas).
+* **6 Bloques:**
+    * Representados por figuras AABB con textura de ladrillo amarillo.
+* **4 Pilares:**
+    * Representados por cilindros con texturas de madera.
 * **Suelo:**
-    * **1 Plano** infinito con textura de pasto.
-* **Modelos 3D (.obj):**
-    * **Mario Metal:** Modelo complejo cargado mediante triángulos, utilizando un material altamente reflectivo (Metal Cap).
-    * **Estrella (Star):** Modelo cargado mediante triángulos con material opaco.
-* **Texturas Implementadas (4 texturas + Skybox):**
-    * `sky.jpg` (Environment Map / Cielo).
-    * `grass.jpg` (Suelo).
-    * `block.jpg` (Bloques).
-    * `wood.jpg` (Pilares).
+    * Modelado por 1 plano infinito con textura de pasto.
+* **Modelos OBJ:**
+    * **Mario:** Modelo cargado mediante triángulos, utilizando un material altamente reflectivo que simula el metal.
+    * **Star:** Modelo cargado mediante triángulos con las texturas originales.
+* **Texturas:**
+    * `sky.jpg` (Environment Map)
+    * `grass.jpg`
+    * `block.jpg`
+    * `wood.jpg`
 * **Materiales:**
-    * Se implementaron múltiples definiciones de materiales, incluyendo materiales mate, materiales con textura e iluminación especular (Phong), y materiales reflectivos (espejo).
+    * Se definieron 7 materiales distintos para componer la escena, abarcando diferentes propiedades ópticas:
+        * 3 Materiales Texturizados
+        * 3 Materiales Opacos
+        * 1 Material Reflectivo
 
 ---
 
-## Comparación de Resultados
+## Resultados
 
-A la izquierda se muestra una imagen de referencia del estilo visual buscado, y a la derecha el render final obtenido (.bmp) con el Ray Tracer:
+A la izquierda se muestra la imagen de referencia. A la derecha, el render final obtenido con el Ray Tracer:
 
-| Referencia (Inspiración) | Render Final (Ray Tracer) |
+| Imagen Referencia | Render Final |
 | :---: | :---: |
-| <img src="image_10d819.jpg" alt="Referencia Mario 64" width="400"/> | <img src="Escena.bmp" alt="Render Final" width="400"/> |
+| <img src="Mario64.jpg" alt="Imagen Referencia" width="360"/> | <img src="Mario64.bmp" alt="Render Final" width="360"/> |
 
 ---
 
 ## Enlace Repositorio
 
-Branch: **Proyecto2** <https://github.com/ihatethenewandre/Graficas/tree/Proyecto2>
+**Branch:** Proyecto2
+<https://github.com/ihatethenewandre/Graficas/tree/Proyecto2>
 
 ---
 
 ## Ejecución
 
 1. **Clonar el Repositorio**
-   ```bash
-   # Clonar el Repositorio
-   git clone [https://github.com/ihatethenewandre/Graficas.git](https://github.com/ihatethenewandre/Graficas.git)
-   # Moverse al Repositorio
-   cd Graficas
-   # Moverse a la Branch correspondiente
-   git switch Proyecto2
+```bash
+# Clonar el Repositorio
+git clone https://github.com/ihatethenewandre/Graficas.git
+# Moverse al Repositorio
+cd Graficas
+# Moverse a la Branch
+git switch Proyecto2
+```
+2. **Ejecutar el Programa**
+```bash
+# El programa solicitará las dimensiones de la resolución a renderizar
+python python RayTracer.py
+```
+Después del renderizado la escena se guardará como Mario64.bmp en la raíz del proyecto.
+
+---
+
+## Estructura
+```cmd
+Graficas/
+├─ RayTracer.py
+├─ GraphicLibrary.py
+├─ Figures.py
+├─ Lights.py
+├─ Materials.py
+├─ Interception.py
+├─ MathLibrary.py
+├─ Refraction.py
+├─ OBJ_Loader.py
+│
+├─ mario.obj
+├─ star.obj
+├─ star.mtl
+│
+├─ body.png
+├─ eye.png
+│
+├─ sky.jpg
+├─ grass.jpg
+├─ block.jpg
+├─ wood.jpg
+│
+├─ Mario64.jpg
+└─ Mario64.bmp
+```
+---
