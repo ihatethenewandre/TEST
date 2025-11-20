@@ -1,6 +1,6 @@
 # Proyecto II — Gráficas por Computadora
 
-**Universidad del Valle de Guatemala**
+**Universidad del Valle de Guatemala**  
 **Autor:** André Emilio Pivaral López
 
 ---
@@ -9,7 +9,9 @@
 
 Este proyecto consiste en el desarrollo de un Ray Tracer escrito en Python. Renderiza una escena inspirada en la estética del icónico videojuego de Nintendo, Super Mario 64.
 
-Esta idea surgió al ver un video del videojuego modificado para renderizar con Ray Tracing. A pesar de que la geometría original del videojuego es bastante simple, el renderizado hacía que se viera realista. Este proyecto me planteó el desafío de recrear esa estética, con los conocimientos adquiridos en el módulo del curso; cumpliendo con los requisitos de ponderación del proyecto. Además, al ser mi videojuego favorito, la motivación por cuidar los detalles y entregar una escena de calidad fue personal.
+Esta idea surgió al ver un video del videojuego modificado para renderizar con Ray Tracing. A pesar de que la geometría original del videojuego es bastante simple, el renderizado hacía que se viera realista. 
+
+Este proyecto me planteó el desafío de recrear esa estética, con los conocimientos adquiridos en el módulo del curso; cumpliendo con los requisitos de ponderación del proyecto. Además, al ser mi videojuego favorito, la motivación por cuidar los detalles y entregar una escena de calidad fue personal.
 
 El programa soporta materiales opacos, reflectivos, texturizados; manejo de luz ambiental, direccional y puntual; sombras y carga de modelos OBJ.
 
@@ -55,7 +57,7 @@ A la izquierda se muestra la imagen de referencia. A la derecha, el render final
 
 ## Enlace Repositorio
 
-**Branch:** Proyecto2
+Branch: Proyecto2  
 <https://github.com/ihatethenewandre/Graficas/tree/Proyecto2>
 
 ---
@@ -83,15 +85,15 @@ Después del renderizado la escena se guardará como Mario64.bmp en la raíz del
 ## Estructura
 ```cmd
 Graficas/
-├─ RayTracer.py
-├─ GraphicLibrary.py
 ├─ Figures.py
+├─ GraphicLibrary.py
+├─ Interception.py
 ├─ Lights.py
 ├─ Materials.py
-├─ Interception.py
 ├─ MathLibrary.py
-├─ Refraction.py
 ├─ OBJ_Loader.py
+├─ RayTracer.py
+├─ Refraction.py
 │
 ├─ mario.obj
 ├─ star.obj
@@ -100,12 +102,12 @@ Graficas/
 ├─ body.png
 ├─ eye.png
 │
-├─ sky.jpg
-├─ grass.jpg
 ├─ block.jpg
+├─ grass.jpg
+├─ sky.jpg
 ├─ wood.jpg
 │
-├─ Mario64.jpg
-└─ Mario64.bmp
+├─ Mario64.bmp
+└─ Mario64.jpg
 ```
 ---
