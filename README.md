@@ -1,7 +1,7 @@
 # Proyecto II — Gráficas por Computadora
 
 **Universidad del Valle de Guatemala**  
-**Autor:** André Emilio Pivaral López
+André Emilio Pivaral López
 
 ---
 
